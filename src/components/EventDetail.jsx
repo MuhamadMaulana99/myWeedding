@@ -4,15 +4,15 @@ const EventDetail = () => {
   const events = [
     {
       title: "Akad Nikah",
-      date: "Sabtu, 30 Agustus 2025",
-      time: "08:00 - 10:00 WITA",
-      location: "Kediaman Mempelai Wanita, Ubud, Bali"
+      date: "Kamis, 08 Januari 2026",
+      time: "08:00 - 09:00 WIB",
+      location: "KUA Serpong"
     },
     {
       title: "Resepsi",
-      date: "Sabtu, 30 Agustus 2025",
-      time: "11:00 - 15:00 WITA",
-      location: "Gedung Serba Guna, Ubud, Bali"
+      date: "Kamis, 08 Januari 2026",
+      time: "09:30 - 12:00 WIB",
+      location: "Resto Cisadane River Park"
     }
   ];
 

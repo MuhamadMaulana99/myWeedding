@@ -1,52 +1,81 @@
+import React from "react";
+
 const LoveStory = () => {
   const milestones = [
     {
-      year: "2018",
+      date: "20 Jun 2025",
       title: "Pertemuan Pertama",
-      description: "Bertemu di kampus Universitas Lampung"
+      description:
+        "Bertemu di kampus Universitas Lampung, awal dari segalanya.",
     },
     {
-      year: "2020",
+      date: "20 Sep 2026",
       title: "Mulai Hubungan",
-      description: "Resmi berpacaran setelah lulus kuliah"
+      description:
+        "Resmi berpacaran setelah perjuangan menyelesaikan kuliah bersama.",
     },
     {
-      year: "2023",
+      date: "20 Jan 2027",
       title: "Tunangan",
-      description: "Melangsungkan acara tunangan di Bali"
+      description:
+        "Mengikat janji suci dalam acara tunangan yang hangat di Bali.",
     },
     {
-      year: "2025",
+      date: "20 Agst 2027",
       title: "Pernikahan",
-      description: "Menikah di Ubud, Bali"
-    }
+      description: "Menyambut babak baru kehidupan di Ubud, Bali.",
+    },
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="font-great-vibes text-4xl text-center text-rose-600 mb-12">Perjalanan Cinta Kami</h2>
-        
+    <section className="py-20 px-4 bg-gray-50">
+      <div className="max-w-5xl mx-auto">
+        {/* Judul */}
+        <div className="text-center mb-16">
+          <h2 className="font-great-vibes text-5xl text-rose-600 mb-4">
+            Perjalanan Cinta Kami
+          </h2>
+          <div className="h-1 w-24 bg-rose-300 mx-auto rounded-full"></div>
+        </div>
+
         <div className="relative">
-          <div className="absolute left-1/2 h-full w-0.5 bg-rose-200 transform -translate-x-1/2"></div>
-          
+          {/* Garis Tengah (Hanya muncul di Desktop) */}
+          <div className="absolute left-1/2 hidden md:block h-full w-0.5 bg-rose-200 transform -translate-x-1/2"></div>
+
+          {/* Garis Samping (Hanya muncul di Mobile) */}
+          <div className="absolute left-4 md:hidden h-full w-0.5 bg-rose-200"></div>
+
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
-              <div 
-                key={index} 
-                className={`relative flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start`}
+              <div
+                key={index}
+                className={`relative flex flex-col md:flex-row items-center ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
               >
-                <div className={`w-24 flex-shrink-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} md:px-4`}>
-                  <span className="inline-block px-3 py-1 bg-rose-600 text-white rounded-full">
-                    {milestone.year}
-                  </span>
-                </div>
-                
-                <div className="absolute left-1/2 w-4 h-4 rounded-full bg-rose-600 transform -translate-x-1/2 mt-2"></div>
-                
-                <div className={`flex-1 bg-rose-50 p-6 rounded-lg shadow-sm ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                  <h3 className="text-xl font-semibold text-rose-600 mb-2">{milestone.title}</h3>
-                  <p className="text-gray-700">{milestone.description}</p>
+                {/* Spacer untuk Desktop agar zigzag */}
+                <div className="hidden md:block md:w-1/2"></div>
+
+                {/* Bulatan Timeline */}
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow transform -translate-x-1/2 z-10"></div>
+
+                {/* Konten Card */}
+                <div
+                  className={`w-full md:w-1/2 pl-12 md:pl-0 ${
+                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                  }`}
+                >
+                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-rose-100 hover:shadow-md transition-shadow duration-300">
+                    <span className="inline-block px-4 py-1 mb-3 bg-rose-600 text-white text-sm font-semibold rounded-full shadow-sm">
+                      {milestone.date}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {milestone.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

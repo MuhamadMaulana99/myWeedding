@@ -23,9 +23,9 @@ const CoupleProfile = () => {
                 loading="lazy"
               />
             </div>
-            <h3 className="text-2xl font-semibold mb-2">Made</h3>
-            <p className="text-gray-600 mb-1">Putra pertama dari</p>
-            <p className="text-gray-600 mb-4">Bapak Nyoman & Ibu Komang</p>
+            <h3 className="text-2xl font-semibold mb-2">Maulana</h3>
+            <p className="text-gray-600 mb-1">Putra ketujuh dari</p>
+            <p className="text-gray-600 mb-4"> Alm. Bapak Hasilm & Alm. Ibu Nursiah</p>
             
             {groomInstagram ? (
               <a 
@@ -56,9 +56,9 @@ const CoupleProfile = () => {
                 loading="lazy"
               />
             </div>
-            <h3 className="text-2xl font-semibold mb-2">Putu</h3>
-            <p className="text-gray-600 mb-1">Putri kedua dari</p>
-            <p className="text-gray-600 mb-4">Bapak Wayan & Ibu Made</p>
+            <h3 className="text-2xl font-semibold mb-2">Hanifah</h3>
+            <p className="text-gray-600 mb-1">Putri keempat dari</p>
+            <p className="text-gray-600 mb-4">Alm. Bapak Edy & Alm. Ibu Siti</p>
             
             {brideInstagram ? (
               <a 

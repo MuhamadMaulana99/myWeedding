@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         
         <p className="text-gray-600 text-sm">
-          Made with <FaHeart className="inline text-rose-500" /> by KetutWeb • © 2025
+          Made with <FaHeart className="inline text-rose-500" /> by Maulana • © 2025
         </p>
         
         {isPlaying && (

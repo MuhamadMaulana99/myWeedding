@@ -10,7 +10,7 @@ const Countdown = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const weddingDate = new Date('2025-08-30T00:00:00');
+      const weddingDate = new Date('2026-01-08T00:00:00');
       const now = new Date();
       const difference = weddingDate - now;
 
