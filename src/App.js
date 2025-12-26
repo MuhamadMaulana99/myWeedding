@@ -44,7 +44,7 @@ function App() {
 
       {/* Musik Latar (hidden audio element) */}
       <audio id="bgMusic" loop>
-        <source src="/music/background.mp3" type="audio/mpeg" />
+        <source src="./Christina_Perri.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );

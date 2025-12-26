@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FaInstagram, FaMusic, FaHeart } from 'react-icons/fa';
 import { useState } from 'react';
 const Footer = () => {
