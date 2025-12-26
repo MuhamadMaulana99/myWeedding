@@ -115,27 +115,27 @@ const TypingText = ({ text, className }) => {
 const LoveStory = () => {
   const milestones = [
     {
-      date: "20 Jun 2025",
+      date: "29 Jun 2025",
       title: "Pertemuan Pertama",
       description:
-        "Bertemu di kampus Universitas Lampung, awal dari segalanya.",
+        "Bertemu di Stok Expresso Tajug Serpong, awal dari segalanya.",
     },
     {
-      date: "20 Sep 2026",
-      title: "Mulai Hubungan",
+      date: "06 Sep 2025",
+      title: "Mulai Serius",
       description:
-        "Resmi berpacaran setelah perjuangan menyelesaikan kuliah bersama.",
+        "Setelah melewati banyak proses, saya memberanikan diri menyampaikan keseriusan hubungan kepada keluarganya.",
     },
     {
-      date: "20 Jan 2027",
+      date: "13 Des 2025",
       title: "Tunangan",
       description:
-        "Mengikat janji suci dalam acara tunangan yang hangat di Bali.",
+        "Dalam suasana penuh haru dan kebahagiaan, kami melangsungkan prosesi lamaran di rumahnya sebagai langkah awal menuju pernikahan.",
     },
     {
-      date: "20 Agst 2027",
+      date: "08 Jan 2026",
       title: "Pernikahan",
-      description: "Menyambut babak baru kehidupan di Ubud, Bali.",
+      description: "Melangsungkan akad pernikahan secara sederhana namun khidmat bersama keluarga dan orang-orang terdekat.",
     },
   ];
 

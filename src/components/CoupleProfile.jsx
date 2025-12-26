@@ -16,8 +16,8 @@ const CoupleProfile = () => {
   const yParallaxSlow = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const rotateBlob = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
-  const groomInstagram = "https://instagram.com/maulana";
-  const brideInstagram = "https://instagram.com/hanifah";
+  const groomInstagram = "https://www.instagram.com/muhamad_maulana00";
+  const brideInstagram = "https://www.instagram.com/shf0702";
 
   return (
     <section
@@ -110,6 +110,7 @@ const CoupleProfile = () => {
 
               <motion.a
                 href={groomInstagram}
+                target="_blank"
                 whileHover={{ scale: 1.2, color: "#e11d48" }}
                 className="mt-6 inline-block text-stone-400 hover:text-rose-500 transition-colors"
               >

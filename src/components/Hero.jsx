@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import heroBg from "../assets/images/bersama.jpg";
+import heroBg from "../assets/images/cincin.jpg";
 
 const Hero = () => {
   const [guestName, setGuestName] = useState("");
+
+  const playMusic = () => {
+    const audio = document.getElementById("bgMusic");
+    if (audio) {
+      audio.play().catch(() => {
+        console.log("Autoplay diblokir browser");
+      });
+    }
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -27,10 +36,10 @@ const Hero = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 1, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" },
     },
   };
 
@@ -43,7 +52,12 @@ const Hero = () => {
       <motion.div
         initial={{ scale: 1.3 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          duration: 10,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute inset-0"
       >
         <img
@@ -62,11 +76,14 @@ const Hero = () => {
         animate="visible"
         className="relative z-10 text-center px-4"
       >
-        <motion.p variants={itemVariants} className="text-rose-200 tracking-[0.5em] text-xs md:text-sm mb-4 uppercase">
+        <motion.p
+          variants={itemVariants}
+          className="text-rose-200 tracking-[0.5em] text-xs md:text-sm mb-4 uppercase"
+        >
           The Wedding Of
         </motion.p>
 
-        <motion.h1 
+        <motion.h1
           variants={itemVariants}
           className="font-great-vibes text-7xl md:text-9xl text-white mb-6 drop-shadow-2xl"
         >
@@ -74,13 +91,15 @@ const Hero = () => {
         </motion.h1>
 
         <motion.div variants={itemVariants} className="mb-12">
-          <p className="text-white/70 italic text-sm mb-3 font-light">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+          <p className="text-white/70 italic text-sm mb-3 font-light">
+            Kepada Yth. Bapak/Ibu/Saudara/i:
+          </p>
           <div className="inline-block relative">
             <h2 className="text-2xl md:text-4xl font-serif text-white px-8 py-2 relative z-10">
               {guestName || "Tamu Undangan"}
             </h2>
             {/* Garis bawah dekoratif yang memanjang */}
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ delay: 1.5, duration: 1.5 }}
@@ -96,24 +115,34 @@ const Hero = () => {
           >
             {/* Efek Hover Background Fill */}
             <span className="absolute inset-0 bg-rose-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></span>
-            
-            <span className="relative z-10 font-medium tracking-[0.2em] text-sm">BUKA UNDANGAN</span>
+
+            <span
+              className="relative z-10 font-medium tracking-[0.2em] text-sm"
+              onClick={playMusic}
+            >
+              BUKA UNDANGAN
+            </span>
             <motion.svg
               animate={{ x: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
               className="relative z-10 h-5 w-5"
-              fill="none" 
-              viewBox="0 0 24 24" 
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M19 9l-7 7-7-7"
+              />
             </motion.svg>
           </a>
         </motion.div>
       </motion.div>
 
       {/* Ornament Sudut (Opsional untuk kesan mewah) */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
         transition={{ delay: 2, duration: 2 }}
