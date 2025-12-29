@@ -48,7 +48,7 @@ const Gift = () => {
           ))}
         </div>
         
-        <div className="mt-8 bg-rose-50 p-6 rounded-lg shadow-sm text-center">
+        {/* <div className="mt-8 bg-rose-50 p-6 rounded-lg shadow-sm text-center">
           <h3 className="text-xl font-semibold text-rose-600 mb-4">QRIS</h3>
           <div className="flex justify-center mb-4">
             <div className="bg-white p-4 rounded-lg inline-flex items-center justify-center">
@@ -58,7 +58,7 @@ const Gift = () => {
           <button className="px-4 py-2 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors flex items-center gap-2 mx-auto">
             <FaQrcode /> Lihat QR Code
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
