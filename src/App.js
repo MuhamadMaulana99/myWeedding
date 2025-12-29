@@ -36,7 +36,7 @@ function App() {
   <div id="Couple"><CoupleProfile /></div>
   <div id="Events"><EventDetail /></div>
   <div id="Story"><LoveStory /></div>
-  <div id="RSVP"><RSVP /></div>
+  {/* <div id="RSVP"><RSVP /></div> */}
   <div id="Gift"><Gift /></div>
   <Footer />
 </div>

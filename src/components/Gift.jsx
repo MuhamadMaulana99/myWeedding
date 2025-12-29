@@ -8,9 +8,9 @@ const Gift = () => {
       number: '4971419797'
     },
     {
-      bank: 'Mandiri',
+      bank: 'BSI',
       name: 'Hani',
-      number: '00000000'
+      number: '7314738645'
     }
   ];
 

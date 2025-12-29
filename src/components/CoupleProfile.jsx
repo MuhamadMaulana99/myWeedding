@@ -1,8 +1,8 @@
 import { FaInstagram } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import madeft from "../assets/images/maulana.jpg";
-import putuft from "../assets/images/hani.jpg";
+import madeft from "../assets/images/muslim.jpg";
+import putuft from "../assets/images/muslimah.jpg";
 
 const CoupleProfile = () => {
   const containerRef = useRef(null);
@@ -103,7 +103,7 @@ const CoupleProfile = () => {
                   Putra Dari
                 </p>
                 <p className="text-stone-600 font-medium italic">
-                  Alm. Bapak Hasilm <br className="hidden md:block" /> & Alm.
+                  Alm. Bapak Hasim <br className="hidden md:block" /> & Alm.
                   Ibu Nursiah
                 </p>
               </div>
@@ -168,7 +168,7 @@ const CoupleProfile = () => {
 
               {/* Nama & Detail dengan Perbaikan Class Name */}
               <h3 className="text-3xl md:text-4xl font-serif text-stone-800 tracking-wide mb-4 leading-tight">
-                Siti Hanifah Fuziyyah
+                Siti Hanifah Fauziyyah
               </h3>
 
               <div className="space-y-2">
@@ -176,7 +176,7 @@ const CoupleProfile = () => {
                   Putri Dari
                 </p>
                 <p className="text-stone-600 font-medium italic text-sm md:text-base">
-                  Alm. Bapak Edy & Alm. Ibu Siti
+                  Alm. Bapak Eddy & Alm. Ibu Omih
                 </p>
               </div>
 
