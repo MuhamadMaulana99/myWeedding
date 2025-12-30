@@ -48,7 +48,7 @@ const CoupleProfile = () => {
             transition={{ duration: 1 }}
           >
             <span className="inline-block px-6 py-1.5 border-x border-rose-200 text-rose-400 text-[10px] tracking-[0.5em] uppercase mb-6">
-              The Wedding Of
+             (QS.Ar-Rum: 21)
             </span>
           </motion.div>
 

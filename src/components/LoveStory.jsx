@@ -96,7 +96,7 @@ const TypingText = ({ text, className }) => {
 
   return (
     <motion.div
-      style={{ display: "flex", overflow: "hidden", justifyContent: "center" }}
+      style={{ display: "flex", justifyContent: "center" }}
       variants={container}
       initial="hidden"
       whileInView="visible"
