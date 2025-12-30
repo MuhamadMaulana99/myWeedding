@@ -1,8 +1,34 @@
 import { useState } from "react";
 import { FaCopy, FaCheck } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Gift = () => {
   const [copiedIndex, setCopiedIndex] = useState(null);
+
   const bankAccounts = [
     {
       bank: "BCA",
@@ -18,69 +44,109 @@ const Gift = () => {
 
   const copyToClipboard = (text, index) => {
     navigator.clipboard.writeText(text).then(() => {
-      setCopiedIndex(index); // Set index yang disalin
-
-      // Kembalikan ke ikon copy setelah 2 detik
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 2000);
     });
   };
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <motion.section
+      className="py-16 px-4 bg-white"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="max-w-2xl mx-auto">
-        <h2 className="font-great-vibes text-4xl text-center text-rose-600 mb-6">
+        {/* Judul */}
+        <motion.h2
+          className="font-great-vibes text-4xl text-center text-rose-600 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           Amplop Digital
-        </h2>
+        </motion.h2>
 
-        <p className="text-center text-gray-600 mb-8">
+        <motion.p
+          className="text-center text-gray-600 mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
           Tanpa mengurangi rasa hormat, bagi yang ingin memberikan tanda kasih:
-        </p>
+        </motion.p>
 
-        <div className="space-y-6">
+        {/* List Rekening */}
+        <motion.div
+          className="space-y-6"
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {bankAccounts.map((account, index) => (
-            <div key={index} className="bg-rose-50 p-6 rounded-lg shadow-sm">
+            <motion.div
+              key={index}
+              variants={cardVariant}
+              whileHover={{ scale: 1.02 }}
+              className="bg-rose-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+            >
               <h3 className="text-xl font-semibold text-rose-600 mb-3">
                 {account.bank}
               </h3>
+
               <div className="space-y-2">
                 <p>
-                  Atas Nama: <span className="font-medium">{account.name}</span>
+                  Atas Nama:{" "}
+                  <span className="font-medium">{account.name}</span>
                 </p>
+
                 <div className="flex justify-between items-center">
                   <p>
                     No. Rekening:{" "}
                     <span className="font-medium">{account.number}</span>
                   </p>
-                  <button
+
+                  <motion.button
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
                     onClick={() =>
-                      copyToClipboard(account.number.replace(/\s/g, ""), index)
+                      copyToClipboard(
+                        account.number.replace(/\s/g, ""),
+                        index
+                      )
                     }
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       copiedIndex === index
                         ? "bg-green-100 text-green-600"
-                        : "bg-rose-600 text-white hover:bg-rose-700 active:scale-95"
+                        : "bg-rose-600 text-white hover:bg-rose-700"
                     }`}
                   >
                     {copiedIndex === index ? (
-                      <>
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        className="flex items-center gap-2"
+                      >
                         <FaCheck /> Tersalin
-                      </>
+                      </motion.span>
                     ) : (
                       <>
                         <FaCopy /> Salin
                       </>
                     )}
-                    {/* <FaCopy /> Salin */}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
